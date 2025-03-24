@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-container">
+        <video autoplay muted loop class="background-video">
+          <source src="videos/videoFondo.mp4" type="video/mp4">
+          Tu navegador no soporta el video.
+        </video>
+
+  <div class="container">
+    
+    <h1>Mini E-commerce</h1>
+    <div class="products">
+      <div class="product-card" onclick="toggleSelection(this, 'TV')">
+        <h2>TV</h2>
+        <p>Precio: $300</p>
+        <span class="checkmark hidden">✔</span>
+      </div>
+      <div class="product-card" onclick="toggleSelection(this, 'DVD')">
+        <h2>DVD</h2>
+        <p>Precio: $50</p>
+        <span class="checkmark hidden">✔</span>
+      </div>
+      <div class="product-card" onclick="toggleSelection(this, 'Licuadora')">
+        <h2>Licuadora</h2>
+        <p>Precio: $70</p>
+        <span class="checkmark hidden">✔</span>
+      </div>
+    </div>
+
+    <button id="buy-btn" onclick="openIdModal()">Comprar</button>
+  </div>
+
+  <!-- Modal para ingresar el ID -->
+  <div id="id-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Ingresa tu ID</h2>
+      <input type="text" id="user-id" placeholder="Escribe tu ID aquí">
+      <div class="modal-actions">
+        <button onclick="closeModal('id-modal')">Cancelar</button>
+        <button onclick="processPurchase()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para el resumen de compra -->
+  <div id="summary-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Resumen de Compra</h2>
+      <p><strong>ID Usuario:</strong> <span id="summary-id"></span></p>
+      <p><strong>Número de Orden:</strong> <span id="summary-order"></span></p>
+      <p><strong>Fecha y Hora:</strong> <span id="summary-timestamp"></span></p>
+      <p><strong>Productos Comprados:</strong></p>
+      <ul id="summary-products"></ul>
+      <div class="modal-actions">
+        <button onclick="resetPage()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+    </div>
+</body>
+</html>
