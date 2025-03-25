@@ -1,14 +1,71 @@
+/* Estilos globales */
 body, html {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   font-family: Arial, sans-serif;
-  overflow: hidden; /* Para evitar scroll si algo sobresale */
-  margin: none;
-  padding: none;
+  overflow-y: scroll;
 }
 
+
+.container-content{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+
+}
+
+
+
+.navbar {
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0px 0;
+
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+/* Contenedor de logos */
+.container-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+}
+
+.btn-logo {
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  margin: 0 0px;
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.logo-image {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.logo-image-m {
+  width: 25px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+/* Video de fondo */
 .video-container {
   position: relative;
   width: 100%;
@@ -20,60 +77,196 @@ body, html {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100vw; /* Asegúrate de que ocupe todo el ancho */
-  height: 100vh; /* Asegúrate de que ocupe toda la altura */
-  object-fit: contain; /* Muestra el video completo sin recortarlo */
-  transform: translate(-50%, -50%); /* Centra el video */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
   z-index: -1;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  color: white;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-h1 {
-  text-align: center;
-}
-
-.products {
+/* Navbar */
+.navbar-logos {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.div-categorias{
+width: 400px;
+}
+.navbar {
+
+  color: white;
+  display: flex;
+  gap: 30px; /* Agrega espacio entre los botones */
+}
+
+.nav-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  border-bottom: solid 2px #fcbe01;
+  
+}
+
+.nav-btn.animation {
+  border: solid 1px #fcbe01;
+  background: linear-gradient(180deg, rgba(252, 190, 1, 0.5) 0%, rgba(252, 190, 1, 0) 100%);
+  background-size: 100% 200%;
+  background-position: top;
+  animation: light-ray 2.5s infinite;
+}
+
+@keyframes light-ray {
+  0% {
+    background-position: top;
+  }
+  100% {
+    background-position: bottom;
+  }
+}
+
+.nav-btn-garena {
+  background: transparent;
+  color: white;
+  border: none;
+  margin: 0 5px;
+  border-radius: 5px;
+  border-bottom: solid 2px #fcbe01;
+}
+
+#garena {
+  border: solid 1px #ff5722;
+  background-color: transparent;
+  width: 55px;
+  height: 70px;
+}
+
+/* Contenedores */
+.container {
+  position: fixed;
+  top: 150px;
+  max-width: 420px; /* Limita el ancho total del contenedor */
+  max-height: 550px;
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: 1px; /* Reduce aún más el grosor de la barra de scroll */
+  align-items: center;
+
+
+
+}
+
+
+
+
+.container-bottoms {
+  top: 83%;
+  position: fixed;
+  width: 210px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Botones */
+.btns-regalos {
+  background-color: transparent;
+  flex-direction: column;
+  border: none;
+  cursor: pointer;
+}
+
+#btn-carrito {
+  background-color: rgb(251 187 13);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-regalo {
+  width: 100px;
+}
+
+#btn-regalito {
+  background-color: rgb(60, 58, 54);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Productos */
+.products {
+  display: grid; /* Cambia a grid para filas y columnas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 15px; /* Espaciado entre productos */
+  justify-content: center; /* Centra los productos horizontalmente */
+  max-width: 800px; /* Máximo ancho para el grid */
+  max-height: 900px;
+  margin: 0 auto; /* Centrado en la pantalla */
+  overflow-y: auto; /* Habilita el scroll vertical */
+  max-height: calc(100vh - 120px); /* Ajusta la altura máxima para permitir scroll */
+
+  overflow-x: hidden; /* Desactiva el scroll horizontal */
+  scrollbar-width: thin; /* Para Firefox: hace la barra más delgada */
+  scrollbar-color: #FFA832 #00000059;
+}
+
+.products::-webkit-scrollbar {
+  width: 8px; /* Grosor de la barra */
+  margin-left: 20px; /* Espacio entre la barra y el contenido */
+}
+
+.products::-webkit-scrollbar-thumb {
+  background-color: #FFA832; /* Color del thumb (la parte que se arrastra) */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 2px solid transparent; /* Espaciado interior */
+  background-clip: padding-box; /* Ajusta el borde al área visible */
+}
+
+.products::-webkit-scrollbar-track {
+  background-color: #00000059; /* Color del fondo de la barra */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
 .product-card {
-  background: #e0f7fa;
-  padding: 15px;
-  border-radius: 8px;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  width: 150px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  position: relative;
 }
 
-.product-card:hover {
-  background-color: #b2ebf2;
+
+.imgs{
+  
+position: relative;
+bottom: 22px;
 }
+
+
 
 .product-card h2 {
   font-size: 18px;
 }
 
-.checkmark {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 18px;
-  color: green;
-  font-weight: bold;
+.product-card img {
+  width: 100%;
+  height: 100%; /* Mantiene la proporción de las imágenes */
+  border-radius: 10px;
+  object-fit: cover; /* Ajusta la imagen al contenedor */
+}
+
+.product-card.selected {
+  border-radius: 10px;
+  border: 2px solid gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Efecto de brillo opcional */
 }
 
 .hidden {
@@ -81,21 +274,44 @@ h1 {
 }
 
 #buy-btn {
-  background-color: #ff5722;
+  background-color: transparent;
   color: white;
   border: none;
-  padding: 10px 15px;
+}
+
+/* Logos */
+.loguito-products {
+  background-color: rgb(0, 0, 0);
+  border: solid 1px #faea00;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  left: 80%;
+  z-index: 1000;
+  position: relative;
   border-radius: 5px;
-  cursor: pointer;
-  display: block;
-  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#buy-btn:hover {
-  background-color: #e64a19;
+#loguito-garena {
+  width: 12px;
+  height: 12px;
 }
 
-/* Modal styles */
+.logo-category {
+  width: 35px;
+  height: 35px;
+}
+
+.logo-dar {
+  width: 200px;
+  height: 53px;
+  margin-top: 20px;
+}
+
+/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -119,6 +335,7 @@ h1 {
   max-width: 400px;
   width: 100%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 10001;
 }
 
 .modal-actions {
@@ -144,7 +361,6 @@ h1 {
   color: white;
 }
 
-/* Show modal */
 .modal.show {
   visibility: visible;
   opacity: 1;

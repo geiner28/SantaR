@@ -7,64 +7,111 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="video-container">
-        <video autoplay muted loop class="background-video">
-          <source src="videos/videoFondo.mp4" type="video/mp4">
-          Tu navegador no soporta el video.
-        </video>
+  <div class="video-container">
+    <video autoplay muted loop class="background-video">
+      <source src="videos/videoFondo.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
 
-  <div class="container">
-    
-    <h1>Mini E-commerce</h1>
-    <div class="products">
-      <div class="product-card" onclick="toggleSelection(this, 'TV')">
-        <h2>TV</h2>
-        <p>Precio: $300</p>
-        <span class="checkmark hidden">✔</span>
-      </div>
-      <div class="product-card" onclick="toggleSelection(this, 'DVD')">
-        <h2>DVD</h2>
-        <p>Precio: $50</p>
-        <span class="checkmark hidden">✔</span>
-      </div>
-      <div class="product-card" onclick="toggleSelection(this, 'Licuadora')">
-        <h2>Licuadora</h2>
-        <p>Precio: $70</p>
-        <span class="checkmark hidden">✔</span>
-      </div>
-    </div>
+    <div class="container-content">
 
-    <button id="buy-btn" onclick="openIdModal()">Comprar</button>
-  </div>
+      <div class="container-logos">
+        <nav class="navbar-logos">
+          <button class="btn-logo">
+            <img src="logos/logo-oro.png" alt="Logo Oro" class="logo-image">23,343,436
+          </button>
 
-  <!-- Modal para ingresar el ID -->
-  <div id="id-modal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Ingresa tu ID</h2>
-      <input type="text" id="user-id" placeholder="Escribe tu ID aquí">
-      <div class="modal-actions">
-        <button onclick="closeModal('id-modal')">Cancelar</button>
-        <button onclick="processPurchase()">Confirmar</button>
-      </div>
-    </div>
-  </div>
+          <button class="btn-logo"> 
+            <img src="logos/logo-diamante.png" alt="Logo Diamante" class="logo-image">90,646,455
+          </button>
 
-  <!-- Modal para el resumen de compra -->
-  <div id="summary-modal" class="modal hidden">
-    <div class="modal-content">
-      <h2>Resumen de Compra</h2>
-      <p><strong>ID Usuario:</strong> <span id="summary-id"></span></p>
-      <p><strong>Número de Orden:</strong> <span id="summary-order"></span></p>
-      <p><strong>Fecha y Hora:</strong> <span id="summary-timestamp"></span></p>
-      <p><strong>Productos Comprados:</strong></p>
-      <ul id="summary-products"></ul>
-      <div class="modal-actions">
-        <button onclick="resetPage()">Cerrar</button>
+          <button class="btn-logo"> 
+            <img src="logos/logo-menbresia.jpeg" alt="Logo Menbresia" class="logo-image-m">Membresia
+          </button>
+        </nav>
       </div>
+
+      <div class="div-caterorias"> 
+      <nav class="navbar">
+        <button class="nav-btn-garena" id="garena" disabled>
+          <img src="logos/logo-garena.png" alt="" class="logo-category">
+        </button>
+
+        <button class="nav-btn" onclick="showCategory(0)">
+          <img src="logos/trajes_g.png" alt="" class="logo-category">
+        </button>
+
+        <button class="nav-btn" onclick="showCategory(1)">
+          <img src="logos/ropa_g.png" alt="" class="logo-category">
+        </button>
+
+        <button class="nav-btn" onclick="showCategory(2)">
+          <img src="logos/armas_g.png" alt="" class="logo-category">
+        </button>
+
+        <button class="nav-btn" onclick="showCategory(3)">
+          <img src="logos/emotes_g.png" alt="" class="logo-category">
+        </button>
+
+        <button class="nav-btn" onclick="showCategory(4)">
+          <img src="logos/logo-diamante.png" alt="" class="logo-category">
+        </button>
+      </nav>
+</div>
+      <div class="container">
+        <div id="product-container" class="products">
+          <div class="loguito-products">
+            <img src="logos/logo-garena.png" id="loguito-garena" alt="" class="logo-category">
+          </div>
+        </div>
+
+        <div class="container-bottoms">
+          <div class="btns-regalos">
+            <button class="btn-regalo" id="btn-regalito">
+              <img src="logos/logo-regalo.png" alt="" class="logo-category">
+            </button>
+
+            <button class="btn-regalo" id="btn-carrito">
+              <img src="logos/logo-compra.png" alt="" class="logo-category">
+            </button>
+          </div>
+
+          <button id="buy-btn" onclick="openIdModal()">
+            <img src="logos/logo-dar.png" alt="" class="logo-dar">
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal para ingresar el ID -->
+      <div id="id-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Ingresa tu ID</h2>
+          <input type="text" id="user-id" placeholder="Escribe tu ID aquí">
+          <div class="modal-actions">
+            <button onclick="closeModal('id-modal')">Cancelar</button>
+            <button onclick="processPurchase()">Confirmar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para el resumen de compra -->
+      <div id="summary-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>Resumen de Compra</h2>
+          <p><strong>ID Usuario:</strong> <span id="summary-id"></span></p>
+          <p><strong>Número de Orden:</strong> <span id="summary-order"></span></p>
+          <p><strong>Fecha y Hora:</strong> <span id="summary-timestamp"></span></p>
+          <p><strong>Productos Comprados:</strong></p>
+          <ul id="summary-products"></ul>
+          <div class="modal-actions">
+            <button onclick="resetPage()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
   <script src="script.js"></script>
-    </div>
 </body>
 </html>
