@@ -157,22 +157,46 @@ function processPurchase() {
     return;
   }
 
+  // Cierra el modal de ID
   closeModal('id-modal');
+
+  // Generar datos del pedido
   const orderNumber = Math.floor(Math.random() * 1000000);
   const timestamp = new Date().toLocaleString();
-  const summaryId = document.getElementById('summary-id');
-  summaryId.textContent = userId;
+  const randomHours = Math.floor(Math.random() * 24) + 1; // Generar número aleatorio entre 1 y 24
 
+  // Mostrar los datos en el modal
+  document.getElementById('summary-id').textContent = userId;
+  document.getElementById('summary-order').textContent = selectedProducts.length;
+  document.getElementById('summary-timestamp').textContent = timestamp;
+
+  // Actualizar el mensaje con las horas aleatorias
+  const deliveryMessage = document.querySelector('#detalles-pedido p:last-child');
+  deliveryMessage.textContent = `Tu pedido llegará a tu cuenta en ${randomHours} horas.`;
+
+  // Renderizar los productos seleccionados
   const summaryProducts = document.getElementById('summary-products');
   summaryProducts.innerHTML = '';
+
+  const summaryContainer = document.createElement('div');
+  summaryContainer.style.display = 'flex';
+  summaryContainer.style.flexWrap = 'wrap';
+  summaryProducts.appendChild(summaryContainer);
+
   selectedProducts.forEach(product => {
-    const li = document.createElement('li');
-    li.textContent = `${product.name} - $${product.price}`;
-    summaryProducts.appendChild(li);
+    const img = document.createElement('img');
+    img.src = product.img;
+    img.alt = product.name;
+    img.style.width = '50px'; // Ajusta el tamaño de la imagen si es necesario
+    img.style.margin = '5px'; // Espaciado entre imágenes
+    summaryContainer.appendChild(img);
   });
 
+  // Mostrar el modal de resumen
   document.getElementById('summary-modal').classList.add('show');
 }
+
+
 
 function resetPage() {
   window.location.reload();

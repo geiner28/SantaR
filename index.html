@@ -85,26 +85,49 @@
       <!-- Modal para ingresar el ID -->
       <div id="id-modal" class="modal hidden">
         <div class="modal-content">
-          <h2>Ingresa tu ID</h2>
-          <input type="text" id="user-id" placeholder="Escribe tu ID aquí">
+
+          <div id="content-modal">
+          <h2>Buscar ID de jugador</h2>
+            <img src="logos/logo-modal.png" alt="" id="logo-modal">
+            </div>
+
+          <div id="container-id">
+              <div id="logo-input">
+            <img src="logos/logo-garena.png" alt="" id="logo_garena">
+              </div>
+                <input type="text" id="user-id" placeholder="Ingresa Id del jugador">
+             </div>
+     
           <div class="modal-actions">
-            <button onclick="closeModal('id-modal')">Cancelar</button>
-            <button onclick="processPurchase()">Confirmar</button>
+            <button onclick="processPurchase() " class="btns-modal">Enviar Regalos</button>
+            <button onclick="closeModal('id-modal')" class="btns-modal">Cancelar</button>
+        
           </div>
         </div>
       </div>
 
       <!-- Modal para el resumen de compra -->
       <div id="summary-modal" class="modal hidden">
-        <div class="modal-content">
-          <h2>Resumen de Compra</h2>
-          <p><strong>ID Usuario:</strong> <span id="summary-id"></span></p>
-          <p><strong>Número de Orden:</strong> <span id="summary-order"></span></p>
-          <p><strong>Fecha y Hora:</strong> <span id="summary-timestamp"></span></p>
-          <p><strong>Productos Comprados:</strong></p>
-          <ul id="summary-products"></ul>
+        <div class="modal-pedido">
+          <h2  id="pedidotitulo">¡Pedido realizado con exito!</h2>
+
+          <div id="detalles-pedido">
+          <p class="P"><strong>ID :</strong> <span id="summary-id"></span></p>
+          <p class="P" ><strong>Cantidad de items: </strong> <span id="summary-order"></span></p>
+          <p class="P"><strong>Fecha del envio:</strong> <span id="summary-timestamp"></span></p>
+          <p class="P"><strong>tu pedido llegara a tu cuenta en </strong></p>
+            </div>
+          <hr class="gold-line">
+
+        <h3 class="letra-gold">Articulos enviados</h3>
+      <ul id="summary-products"></ul>
+          <hr class="gold-line">
+
+       <h5 class="letra-gold">Version v1.3.0|Server-v5-03</h5>
+
+    
           <div class="modal-actions">
-            <button onclick="resetPage()">Cerrar</button>
+            <button id="btn-cerrar" onclick="resetPage()">Cerrar</button>
           </div>
         </div>
       </div>
