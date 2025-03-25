@@ -1,12 +1,12 @@
 /* Estilos globales */
 body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+
   height: 100%;
+  
+  padding: 0px;
   font-family: Arial, sans-serif;
-  overflow-y: scroll;
   overflow-y: auto;
+
 }
 
 
@@ -147,7 +147,7 @@ width: 400px;
 
 /* Contenedores */
 .container {
-  position: fixed;
+
   top: 150px;
   max-width: 420px; /* Limita el ancho total del contenedor */
   max-height: 550px;
@@ -166,6 +166,7 @@ width: 400px;
 
 
 .container-bottoms {
+  
   top: 83%;
   position: fixed;
   width: 210px;
@@ -205,19 +206,16 @@ width: 400px;
 
 /* Productos */
 .products {
-  display: grid; /* Cambia a grid para filas y columnas */
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
-  gap: 15px; /* Espaciado entre productos */
-  justify-content: center; /* Centra los productos horizontalmente */
-  max-width: 800px; /* Máximo ancho para el grid */
-  max-height: 900px;
-  margin: 0 auto; /* Centrado en la pantalla */
-  overflow-y: auto; /* Habilita el scroll vertical */
-  max-height: calc(100vh - 120px); /* Ajusta la altura máxima para permitir scroll */
-
-  overflow-x: hidden; /* Desactiva el scroll horizontal */
-  scrollbar-width: thin; /* Para Firefox: hace la barra más delgada */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  justify-content: center;
+  max-width: 800px;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
   scrollbar-color: #FFA832 #00000059;
+  margin-bottom: 100px; /* Espacio inferior para evitar que los productos se solapen con los botones */
 }
 
 .products::-webkit-scrollbar {
@@ -476,4 +474,38 @@ height: 1px;
 #btn-cerrar{
 width: 450px;
 margin-bottom: 10px;
+}
+
+
+.additional-video{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+#div-video {
+  display: none; /* Por defecto el video estará oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: black; /* Fondo negro para evitar espacios alrededor */
+}
+
+#div-video.show {
+  display: block; /* Mostrar el video cuando se necesite */
+}
+
+.additional-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra todo el área del contenedor */
+  pointer-events: none; /* Hace que el video no sea interactivo */
 }

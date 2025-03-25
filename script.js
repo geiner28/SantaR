@@ -194,9 +194,41 @@ function processPurchase() {
 
   // Mostrar el modal de resumen
   document.getElementById('summary-modal').classList.add('show');
+
+
+    // Reproducir el video adicional
+    playVideo();
+}
+
+function playVideo() {
+  const videoContainer = document.getElementById('div-video');
+  videoContainer.classList.add('show'); // Mostrar el contenedor del video
+  const video = videoContainer.querySelector('.additional-video');
+
+  // Configurar el video para iniciar en silencio y sin interacción
+  video.muted = true;
+  video.play(); // Reproducir el video
+
+  // Escuchar el evento `ended` para cerrar el video automáticamente
+  video.addEventListener('ended', () => {
+    closeVideo(); // Cierra el video
+    showSummary(); // Muestra el resumen del pedido
+  });
 }
 
 
+function closeVideo() {
+  const videoContainer = document.getElementById('div-video');
+  const video = videoContainer.querySelector('.additional-video');
+  video.pause();
+  video.currentTime = 0; // Reinicia el video
+  videoContainer.classList.remove('show'); // Oculta el contenedor del video
+}
+
+function showSummary() {
+  // Mostrar el modal de resumen del pedido
+  document.getElementById('summary-modal').classList.add('show');
+}
 
 function resetPage() {
   window.location.reload();
