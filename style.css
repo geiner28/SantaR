@@ -5,27 +5,46 @@ width: 100%;
 
     font-family: Arial, sans-serif;
     margin: 0;
- 
+ font-size: 16px;
+  
 
   
   }
+
+#capa{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+z-index: -1;
+  mix-blend-mode: screen;
+  background-color: rgba(0, 0, 0, 0.371);
+}
   
-  #image-fondo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 100vh;
+  #div-imagen{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -8; /* Coloca la imagen por encima del video */
-    opacity: 0.6; /* Ajusta la opacidad para que sea semitransparente */
+    z-index: -9;
+    mix-blend-mode: screen;
+
   }
   
-  
+  #img-fondo{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+  }
   
   .container-content{
-margin-top: 80px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,14 +63,14 @@ margin-top: 80px;
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+
     color: white;
     display: flex;
-    gap: 40px; /* Agrega espacio entre los botones */
+    gap: 35px; /* Agrega espacio entre los botones */
   }
   /* Contenedor de logos */
   .container-logos {
-    top:10px;
+    top:0px;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -59,6 +78,7 @@ margin-top: 80px;
     margin-top: 0px;
     margin-bottom: 0px;
     z-index: 1000;
+    background: linear-gradient(to bottom, #000000, #0000);
   
   }
   
@@ -72,12 +92,14 @@ margin-top: 80px;
     background-color: transparent;
     cursor: pointer;
     font-size: 15px;
+
   }
   
   .logo-image {
     width: 25px;
     height: 25px;
     margin-right: 10px;
+    
   }
   
   .logo-image-m {
@@ -101,6 +123,7 @@ margin-top: 80px;
   
   .background-video{
     max-width: 100%;
+
   }
 
   
@@ -112,10 +135,10 @@ margin-top: 80px;
     gap: 20px;
   }
   
-  .div-categorias{
-    margin-top: 20px;
-    margin-bottom: 20px;
-  width: 400px;
+  .div-caterorias{
+    margin-top: 0px;
+    margin-bottom: 10px;
+
   }
 
   
@@ -125,7 +148,7 @@ margin-top: 80px;
     justify-content: center;
     width: 45px;
     height: 64px;
-    background: transparent;
+    background:rgba(0, 0, 0, 0.655);
     color: white;
     border: none;
     border-radius: 5px;
@@ -151,7 +174,7 @@ margin-top: 80px;
   }
   
   .nav-btn-garena {
-    background: transparent;
+    background: black;
     color: white;
     border: none;
     margin: 0 5px;
@@ -164,7 +187,7 @@ margin-top: 80px;
     align-items: center;
     justify-content: center;
     border: solid 1px #ff5722;
-    background-color: transparent;
+
     width: 45px;
     height: 64px;
   }
@@ -227,7 +250,7 @@ margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-height:650px ;
-    gap: 15px;
+    gap: 18px;
 
 
   }
@@ -298,7 +321,7 @@ margin-top: 80px;
     width: 20px;
     height: 20px;
     z-index: 1;
-    top: 30px;
+    top: 15px;
     margin-top: 0px;
     margin-left: 75%;
     position: relative;
@@ -491,17 +514,7 @@ margin-top: 80px;
   margin-bottom: 10px;
   }
   
-  
-  .additional-video{
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
+
 /* Capa para oscurecer el fondo */
 #overlay {
   display: none; /* Por defecto está oculto */
@@ -515,30 +528,39 @@ margin-top: 80px;
 }
 
 /* Contenedor del video */
+/* Contenedor del video */
+/* Contenedor del video */
+/* Contenedor del video */
 #div-video {
-  display: none; /* Por defecto el video estará oculto */
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 450px; /* Ancho del contenedor */
-  height: 220px; /* Alto del contenedor */
+  width: 450px; /* Puedes incrementar este valor */
+  height: 220px; /* Puedes incrementar este valor */
   z-index: 1000;
-  background: black; /* Fondo negro para evitar espacios alrededor */
-  transform: translate(-50%, -50%); /* Centra el contenedor */
-  border-radius: 10px; /* Bordes redondeados */
+background-color: transparent;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+
   overflow: hidden; /* Asegura que el video no se salga del contenedor */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para destacar el contenedor */
 }
 
-/* Estilo del video dentro del contenedor */
-.additional-video {
-  width: 100%; /* Asegura que el video ocupe el ancho completo del contenedor */
-  height: 100%; /* Asegura que el video ocupe el alto completo del contenedor */
-  object-fit: cover; /* Ajusta el video al contenedor sin distorsión */
-  pointer-events: none; /* Hace que el video no sea interactivo */
+/* Estilo del video */
+.video-regalo {
+  display: block;
+  position: absolute;
+  top: 50%; /* Centra el video verticalmente */
+  left: 50%; /* Centra el video horizontalmente */
+  width: auto; /* Ajusta el ancho dinámicamente */
+  height: 200%; /* Incrementa el alto del video para llenar más espacio */
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* Hace que el video se ajuste al contenedor */
 }
-
   #div-video.show {
     display: block; /* Mostrar el video cuando se necesite */
   }
   
+  /* Video de fondo */
+
+

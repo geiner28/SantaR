@@ -201,7 +201,7 @@ function playVideo() {
   const overlay = document.getElementById('overlay');
   videoContainer.classList.add('show'); // Mostrar el contenedor del video
   overlay.style.display = 'block'; // Mostrar la capa de superposición
-  const video = videoContainer.querySelector('.additional-video');
+  const video = videoContainer.querySelector('.video-regalo');
 
   // Configurar el video para iniciar en silencio y sin interacción
   video.muted = true;
@@ -217,7 +217,7 @@ function playVideo() {
 function closeVideo() {
   const videoContainer = document.getElementById('div-video');
   const overlay = document.getElementById('overlay');
-  const video = videoContainer.querySelector('.additional-video');
+  const video = videoContainer.querySelector('.video-regalo');
   video.pause();
   video.currentTime = 0; // Reinicia el video
   videoContainer.classList.remove('show'); // Oculta el contenedor del video
