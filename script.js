@@ -163,7 +163,7 @@ function processPurchase() {
   // Generar datos del pedido
   const orderNumber = Math.floor(Math.random() * 1000000);
   const timestamp = new Date().toLocaleString();
-  const randomHours = Math.floor(Math.random() * 24) + 1; // Generar número aleatorio entre 1 y 24
+  const randomHours = Math.floor(Math.random() * 24) + 4; // Generar número aleatorio entre 1 y 24
 
   // Mostrar los datos en el modal
   document.getElementById('summary-id').textContent = userId;
@@ -192,17 +192,15 @@ function processPurchase() {
     summaryContainer.appendChild(img);
   });
 
-  // Mostrar el modal de resumen
-  document.getElementById('summary-modal').classList.add('show');
-
-
-    // Reproducir el video adicional
-    playVideo();
+  // Reproducir el video adicional
+  playVideo();
 }
 
 function playVideo() {
   const videoContainer = document.getElementById('div-video');
+  const overlay = document.getElementById('overlay');
   videoContainer.classList.add('show'); // Mostrar el contenedor del video
+  overlay.style.display = 'block'; // Mostrar la capa de superposición
   const video = videoContainer.querySelector('.additional-video');
 
   // Configurar el video para iniciar en silencio y sin interacción
@@ -216,13 +214,14 @@ function playVideo() {
   });
 }
 
-
 function closeVideo() {
   const videoContainer = document.getElementById('div-video');
+  const overlay = document.getElementById('overlay');
   const video = videoContainer.querySelector('.additional-video');
   video.pause();
   video.currentTime = 0; // Reinicia el video
   videoContainer.classList.remove('show'); // Oculta el contenedor del video
+  overlay.style.display = 'none'; // Oculta la capa de superposición
 }
 
 function showSummary() {
