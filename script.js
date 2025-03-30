@@ -1,79 +1,96 @@
+
+
+
+
+
+
 const categories = [
 
-
+//categoría de trajes
   [
-    
+  
+    { name: 'Producto 1', img: 'images/trajes/Sakura.jpg' },
+    { name: 'Producto 2',img: 'images/trajes/HipHop.jpg' },
+    { name: 'Producto 3',img: 'images/trajes/Destructor.jpg' },
+    { name: 'Producto 4',img: 'images/trajes/Principe.jpg' },
+    { name: 'Producto 5',img: 'images/trajes/Piratas.jpg' },
+    { name: 'Producto 6',img: 'images/trajes/Stempuk.jpg' },
+    { name: 'Producto 7',img: 'images/trajes/Gamer.jpg' },
+    { name: 'Producto 8',img: 'images/trajes/Criminal Amarillo.jpg' },
+    { name: 'Producto 9',img: 'images/trajes/Criminal Azul.jpg' },
+    { name: 'Producto 10',img: 'images/trajes/Criminal Morado.jpg' },
+    { name: 'Producto 11',img: 'images/trajes/Criminal Rojo.jpg' },
+    { name: 'Producto 12',img: 'images/trajes/Criminal Verde.jpg' },
+    { name: 'Producto 13',img: 'images/trajes/Naruto.jpg' }
+  ],
 
-    { name: 'Producto 1', img: 'images/product1.jpg' },
-    { name: 'Producto 2',img: 'images/trajes/sakura.png' },
-    { name: 'Producto 3',img: 'images/trajes/hiphop.png' },
-    { name: 'Producto 4',img: 'images/trajes/destructor.png' },
-    { name: 'Producto 5',img: 'images/trajes/goku.jpg' },
-    { name: 'Producto 6',img: 'images/trajes/itachi.png' },
-    { name: 'Producto 7',img: 'images/trajes/criminalRojo.png' },
-    { name: 'Producto 8',img: 'images/trajes/criminalRojonuevo.png' },
-    { name: 'Producto 9',img: 'images/trajes/criminalmorado.png' },
-    { name: 'Producto 10',img: 'images/trajes/criminalazul.png' },
-    { name: 'Producto 11',img: 'images/trajes/criminalAmarillo.png' },
-    { name: 'Producto 12',img: 'images/trajes/criminalneonAzul.png' },
-    { name: 'Producto 13',img: 'images/trajes/conejoMorado.png' },
-    { name: 'Producto 14',img: 'images/trajes/jingjdorado.png' },
-    { name: 'Producto 15',img: 'images/trajes/jingnuevo.png' },
-    { name: 'Producto 16',img: 'images/trajes/jinjangdorado.png' },
 
+//categoría de ropa
+  [
+
+    { name: 'Producto 1', img: 'images/ropa/angelicalesrojos.png' },
+    { name: 'Producto 2', img: 'images/ropa/angelicalesrosas.png' },
+    { name: 'Producto 3',  img: 'images/ropa/angelicalesverdes.png' },
 
   ],
+
+
+//categoría de armas
   [
 
-
-    { name: 'Producto 17', price: 30, img: 'images/ropa/angelicalesrojos.png' },
-    { name: 'Producto 18', price: 20, img: 'images/ropa/angelicalesrosas.png' },
-    { name: 'Producto 19', price: 30, img: 'images/ropa/angelicalesverdes.png' }
+    { name: 'Producto 1',  img: 'images/armas/vss.jpg' },
+    { name: 'Producto 2',  img: 'images/armas/akroja.jpg' },
+    { name: 'Producto 3',  img: 'images/armas/ak47.jpg' },
+    { name: 'Producto 4',  img: 'images/armas/famasAzu;.jpg' },
+    { name: 'Producto 5',  img: 'images/armas/mac10.jpg' },
+    { name: 'Producto 6',  img: 'images/armas/scar.jpg' },
+    { name: 'Producto 7',  img: 'images/armas/ump.jpg' },
+    { name: 'Producto 8',  img: 'images/armas/umpamarilla.jpg' },
 
   ],
-  [
-    { name: 'Producto 1', price: 10, img: 'images/armas/vss.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/ak47.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/akroja.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/famasAzu;.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/mac10.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/scar.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/ump.jpg' },
-    { name: 'Producto 1', price: 10, img: 'images/armas/umpamarilla.jpg' }
 
+
+//categoría de emotes
+  [
+
+    { name: 'Producto 1', img: 'images/emotes/emote1.png' },
+    { name: 'Producto 2', img: 'images/emotes/emote2.png' },
+    { name: 'Producto 3', img: 'images/emotes/emote3.png' },
+    { name: 'Producto 4', img: 'images/emotes/emote4.png' },
+    { name: 'Producto 5', img: 'images/emotes/emote5.png' },
+    { name: 'Producto 6', img: 'images/emotes/emote6.png' },
+    { name: 'Producto 7', img: 'images/emotes/emote7.png' },
+    { name: 'Producto 8', img: 'images/emotes/emote8.png' },
+    { name: 'Producto 9', img: 'images/emotes/emote9.png' },
+    { name: 'Producto 10', img: 'images/emotes/emote10.png' },
+    { name: 'Producto 11', img: 'images/emotes/emote11.jpg' },
+    { name: 'Producto 12', img: 'images/emotes/emote12.png' },
+    { name: 'Producto 13', img: 'images/emotes/emote13.png' },
+    { name: 'Producto 14', img: 'images/emotes/emote14.png' },
+    { name: 'Producto 15', img: 'images/emotes/emote15.png' },
+    { name: 'Producto 16', img: 'images/emotes/emote16.png' },
+    { name: 'Producto 17', img: 'images/emotes/emote17.png' },
+    { name: 'Producto 18', img: 'images/emotes/emote18.png' },
+    { name: 'Producto 19', img: 'images/emotes/emote19.png' },
+    { name: 'Producto 20', img: 'images/emotes/emote20.png' },
+  
   ],
-  [
-    { name: 'Producto 1', price: 10, img: 'images/product1.jpg' },
-    { name: 'Producto 2', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 3', price: 30, img: 'images/product3.jpg' },
-    { name: 'Producto 4', price: 10, img: 'images/product1.jpg' },
-    { name: 'Producto 5', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 6', price: 30, img: 'images/product3.jpg' },
-    { name: 'Producto 7', price: 10, img: 'images/product1.jpg' },
-    { name: 'Producto 8', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 9', price: 30, img: 'images/product3.jpg' }
-  ],
-  [
-    {  img: 'images/product1.jpg' },
 
-    { name: 'Producto 9', price: 30, img: 'images/product3.jpg' },
-    { name: 'Producto 5', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 6', price: 30, img: 'images/product1.jpg' },
-    { name: 'Producto 7', price: 10, img: 'images/product1.jpg' },
-    { name: 'Producto 8', price: 20, img: 'images/product1.jpg' },
-    { name: 'Producto 9', price: 30, img: 'images/product1.jpg' },
-    { name: 'Producto 5', price: 20, img: 'images/product1.jpg' },
-    { name: 'Producto 6', price: 30, img: 'images/product3.jpg' },
-    { name: 'Producto 7', price: 10, img: 'images/product1.jpg' },
-    { name: 'Producto 8', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 9', price: 30, img: 'images/product3.jpg' },
-    { name: 'Producto 5', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 6', price: 30, img: 'images/product3.jpg' },
-    { name: 'Producto 7', price: 10, img: 'images/product1.jpg' },
-    { name: 'Producto 8', price: 20, img: 'images/product2.jpg' },
-    { name: 'Producto 9', price: 30, img: 'images/product3.jpg' }
 
+//categoría de diamantes
+  [
+
+    { name: 'Producto 1', img: 'images/diamantes/pase.png' },
+    { name: 'Producto 2', img: 'images/diamantes/100.jpg' },
+    { name: 'Producto 2', img: 'images/diamantes/300.jpg' },
+    { name: 'Producto 2', img: 'images/diamantes/500.jpg' },
+    { name: 'Producto 2', img: 'images/diamantes/1000.jpg' },
+    { name: 'Producto 2', img: 'images/diamantes/2000.jpg' },
+    { name: 'Producto 2', img: 'images/diamantes/5000.jpg' },
+ 
   ]
+
+
 ];
 
 let selectedProducts = [];
@@ -235,3 +252,7 @@ function resetPage() {
 
 // Inicializa la primera categoría al cargar
 renderProducts();
+
+
+
+
