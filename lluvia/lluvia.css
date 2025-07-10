@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0e0e0e;
+  overflow: hidden;
+}
+
+.rain-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.drop {
+  position: absolute;
+  top: -100px; /* <-- fuera de vista */
+  width: 2px;
+  height: 20px;
+  background: #00ccff;
+  opacity: 0;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(110vh); /* cae más allá del final de pantalla */
+    opacity: 0;
+  }
+}
